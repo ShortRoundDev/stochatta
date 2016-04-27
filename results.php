@@ -34,6 +34,7 @@
 	<div id="textContent">
 <?php
 
+		/*display results*/
 	if(isset($_GET["results"])){
 		echo "<h1>You were <u style=\"color: red\">";
 		echo intval((intval($_GET["results"])/10) * 100) . "%</u> correct, with " . $_GET["results"] . "/10 correct answers</h1>";
@@ -46,7 +47,7 @@
 		echo intval(doubleval($row["total"])/intval($row["attempts"]) * 100) . "%";
 		echo "</u></h1>";
 	}else{
-		
+		echo "<h1>error</h1>";
 	}
 
 ?>

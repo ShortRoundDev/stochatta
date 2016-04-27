@@ -159,26 +159,34 @@
 	</div>
 
 	<script>
-
+			/*debugging; counts the number of XHR's returned*/
 		var counted = 0;
 
+			/*quotes is an array with the activated quotes; holds int values to identify quote type*/
 		var quotes = new Array(10);
+			/*holds machine quotes in a stack*/
 		var quotesbuffer = new Array();
+			/*holds human quotes in a stack*/
 		var humanQuotesBuffer = new Array();
 		
+			/*events triggered after XHRs*/
 		var fullyloaded = new Event('fullyloaded');
 		var loaded = new Event('loaded');
 		var humanloaded = new Event('humanloaded');
 
+			/*xhr is the array of machine XHRs*/
 		var xhr = [];
+			/*humanXHR is the array of human XHRs*/
 		var humanxhr = [];
 
 		generateSentences();
 
+			/*enter test results*/
 		function submit(){
 			var accuracy = 0;
 
 			for(var i = 0; i < 10; i++){
+					/*if an answer is empty, don't submit*/
 				if(!document.getElementById(i).hasAttribute("choice")){
 					document.getElementById("submitwarning").innerHTML = "You must make a choice for all questions!";
 					return 1;
@@ -187,7 +195,7 @@
 					accuracy += 1;
 				}
 			}
-
+				/*submit results*/
 			window.location="submit.php?results=" + accuracy;
 		}
 
@@ -195,19 +203,27 @@
 
 			var counter = 0;
 
+				/*get between 2 and 8 machine quotes*/
 			var machines = Math.floor(Math.random() * 7) + 2;
 			
+				
 			var machinesLoaded = new CustomEvent("Machines Loaded", null);
 
+				/*create enough XHR's for the machines*/
 			xhr = new Array(machines);
 
 			for(var i = 0; i < machines; i++){
+					/*set random location for machine quote*/
 				var machineLocation = 0;
+					/*if quotes location is already taken, retry*/
 				do{
 					machineLocation = Math.floor(Math.random() * 10);
 				}while(quotes[machineLocation])
+
+					/*set quotes at machineLocation to 1, indicating the need for a new quote*/
 				quotes[machineLocation] = 1;	
 				xhr[i] = new XMLHttpRequest();
+					/*push machine quote into buffer and dispatch loaded event*/
 				xhr[i].onreadystatechange = function(index){
 					return function(){
 						if(xhr[index].readyState == 4 && xhr[index].status == 200){
@@ -225,11 +241,14 @@
 
 			}
 
+				/*fill humanxhr with the remaining amount of quotes*/
 			humanxhr = new Array(10 - machines);
 			for(var i = 0; i < quotes.length; i++){
 				if(!quotes[i]){
+						/*select location for human quote*/
 					quotes[i] = 0;
 					humanxhr[i] = new XMLHttpRequest();
+						/*push human quote into buffer and dispatch loaded event*/
 					humanxhr[i].onreadystatechange = function(index){
 						return function(){
 							if(humanxhr[index].readyState == 4 && humanxhr[index].status == 200){
@@ -246,6 +265,7 @@
 
 			console.log(quotes);
 		}
+			/*when machine is loaded, roll over quotes array until value `1` is found, and insert a machine quote there*/
 		document.addEventListener('loaded', function(){
 			for(var i = 0; i < quotes.length; i++){
 				if(quotes[i] == 1){
@@ -262,6 +282,7 @@
 			}
 			console.log(counted + " xhrs");
 		});
+			/*when human is loaded, roll over quotes array until value `0` is found, and insert a human quote there*/
 		document.addEventListener('humanloaded', function(){
 			for(var i = 0; i < quotes.length; i++){
 				if(quotes[i] == 0){
@@ -276,6 +297,7 @@
 				}
 			}
 		});
+			/*when all quotes are loaded, remove loading screen*/
 		document.addEventListener('fullyloaded', function(){
 			for(var i = 0; i < 10; i++){
 				document.getElementById("quote" + i).style.visibility = "visible";
@@ -285,6 +307,7 @@
 			}
 		});
 
+			/*set choice attribute and color for each div*/
 		function setChoice(dom, color, choice){
 			var ctx = dom.parentElement;
 			var selection = document.getElementById(ctx.getAttribute("parent"));
