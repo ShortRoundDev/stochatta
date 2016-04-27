@@ -1,0 +1,310 @@
+
+	*{
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-o-box-sizing: border-box;
+	}
+
+
+	#copyright{
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		color: grey;
+		font-family: trebuchet ms;
+		font-size: 12px;
+	}
+	#copyright a{
+		color: grey;
+	}
+
+	#small{
+		width: 50%;
+		border: 1px solid black;
+		background: white;
+		display: block;
+	}
+	body, html{
+		margin: 0;
+		background: #ecf0f1;
+	}
+	#content{
+		border: 2px dashed grey;
+		border-radius: 5px;
+		color: black;
+		font-family: Trebuchet MS;
+	}
+
+	#navbar{
+		width: 100%;
+		background: #c0392b;
+		text-align: center;
+	}
+
+	#navbar a{
+		text-decoration: none;
+	}
+	#navbar .icon .tagline{
+		width: 100%;
+		font-size: 12px;
+		color: white;
+		font-family: Trebuchet MS;
+		text-align: center;
+	}
+	#navbar .icon:hover{
+		background: rgba(0,0,0,0.3);
+	}
+
+	#loadingScreen{
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		background-color: rgba(0,0,0,0.8);
+		text-align: center;
+	}
+	#loadingScreen img{
+		display: inline-block;
+		margin-top: 12%;
+	}
+	#loadingScreen p{
+		color: white;
+		font-family: Trebuchet MS;
+	}
+
+	#textContent h1{
+		font-family: Trebuchet MS;
+		text-align: center;
+		clear: both;
+	}
+	#textContent .img-container{
+		text-align: center;
+	}
+	#textContent img{
+		display: inline-block;
+		max-width: 100%;
+	}
+
+	.selection{
+		width: 90%;
+		border: 1px dotted grey;
+		padding: 1em;
+		line-height: 1.5em;
+		margin: 0 auto;
+	}
+	.pre-show{
+		visibility: hidden;
+		height: 0;
+	}
+
+	h3{
+		font-family: Trebuchet MS;
+	}
+	.button{
+		width: 96px;
+		height: 96px;
+		border-radius: 50%;
+		line-height: 600%;
+	}
+	.submit{
+		background: #3498db;
+		color: black;
+		font-family: Trebuchet MS;
+		font-size: 16px;
+		text-align: center;
+		margin: 75px auto 0 auto;
+		cursor: pointer;
+		transition: background 0.25s;
+	}
+	.submit:hover{
+		background: #2980b9;
+	}
+	#submitwarning{
+		width: 50%;
+		margin: 0 auto 0 auto;
+		color: red;
+		text-align: center;
+		
+	}
+
+	.real{
+		background: #2ecc71;
+		color: black;
+		font-family: Trebuchet MS;
+		font-size: 16px;
+		text-align: center;
+		float: left;
+		transition: background 0.25s;
+		cursor: pointer;
+	}
+	.real:hover{
+		background: #27ae60;
+	}
+	.machine{
+		background: #e74c3c;
+		color: black;
+		font-family: Trebuchet MS;
+		font-size: 16px;
+		text-align: center;
+		float: right;
+		cursor: pointer;
+		transition: background 0.25s
+	}
+	.machine:hover{
+		background: #c0392b;
+	}
+	li a{
+		font-family: Trebuchet MS;
+	}
+
+	@media only screen and (min-device-width: 700px){
+		#textContent .ul-container{
+			width: 50%;
+			margin: 0 auto;
+		}
+		#buttonarea{
+			width: 75%;
+			margin: 0 auto;
+			height: 96px;
+			padding: 1em;
+		}
+		#navbar img{
+			margin: 2px 0;
+			width: 48px;
+			height: 48px;
+		}
+		#navbar .icon{
+			width: 78px;
+			display: inline-block;
+		}
+		#navbar .icon .tagline{
+			width: 100%;
+			font-size: 12px;
+			color: white;
+			font-family: Trebuchet MS;
+			text-align: center;
+		}
+		#logo{
+			margin: 0 35%;
+			width: 30%;
+		}
+		#textContent{
+			width: 60%;
+			margin: 50px auto;
+			border-left: 1px dashed grey;
+			border-right: 1px dashed grey;
+			padding: 2em;
+		}
+		#textContent p.info{
+			font-family: Georgia;
+			width: 80%;
+			margin-left: 10%;
+			line-height: 1.5em;
+		}
+		#textContent #quote{
+			margin: 25px auto;
+			line-height: 1.5em;
+			width: 450px;
+			padding: 1em;
+			background: rgba(0,0,0,0.1);
+			border: 1px dotted grey;
+		}
+		#quote #attribution{
+			float: right;
+			clear: both;
+		}
+		#video{
+			margin-top: 25px;
+			text-align: center;
+		}
+		#content{
+			width: 50%;
+			margin: 50px auto 50px auto;
+			padding: 1em;
+			position: relative;
+		}
+		#content #title{
+			width: 100%;
+			color: black;
+			text-align: center;
+			font-family: trebuchet MS;
+		}
+	}
+	@media only screen and (max-device-width: 699px){
+		#buttonarea{
+			width: 90%;
+			margin: 0 auto;
+			height: 96px;
+			padding: 1em;
+		}
+		#logo{
+			width: 74%;
+			margin-left: 13%;
+		}
+		#video{
+			margin-top: 25px;
+			text-align: center;
+		}
+		#textContent{
+			width: 99%;
+			margin-left: 1%;
+			padding: 0.5em;
+		}
+
+		#textContent #quote{
+			margin: 25px auto;
+			line-height: 1.5em;
+			width: 90%;
+			padding: 0.75em;
+			font-size: 22px;
+
+			border: 1px dotted grey;
+			background: rgba(0,0,0,0.1);
+		}
+		#quote #attribution{
+			float: right;
+			clear: both;
+			font-size: 22px;
+		}
+		#navbar img{
+			margin: 2px 0;
+			width: 48px;
+			height: 48px;
+		}
+		#navbar .icon{
+			width: 72px;
+			display: inline-block;
+		}
+		#navbar .icon .tagline{
+			width: 100%;
+			font-size: 12px;
+			color: white;
+			font-family: Trebuchet MS;
+			text-align: center;
+		}
+		#textContent p{
+			font-family: Georgia;
+			font-size: 22px;
+			line-height: 1.5em;
+		}
+		#content{
+			position: relative;
+			width: 98%;
+			margin-left: 1%;
+			margin-top: 40px;
+			padding: 0.5em;
+		}
+	}
+	#content #title{
+		text-align: left;
+		font-family: Verdana;
+		font-size: 1.5em;
+		color: black;
+		margin: 10px 0;
+	}
+	#content textarea{
+		width: 100%;
+		height: 250px;
+		resize: none;
+	}
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+	<div id="navbar">
+		<a href="index.php">
+		<div class="icon"><img src="res/buildings.png">
+			<div class="tagline">Home</div>
+		</div>
+		</a>
+		<a href="about.html">
+		<div class="icon"><img src="res/sign.png">
+			<div class="tagline">Info</div>
+		</div>
+		</a>
+		<a href="test.php">
+		<div class="icon"><img src="res/science.png">
+			<div class="tagline">Testing</div>
+		</div>
+		</a>
+		<a href="sources.html">
+		<div class="icon"><img src="res/library.png">
+			<div class="tagline">Sources</div>
+		</div>
+		</a>
+	</div>
+	<div id="textContent">
+	<h1>What is this website?</h1>
+
+	<p class="info">
+		This website is a markov text-generator, a script which generates human-sounding sentences and expressions using a markov chain. Markov chains are processes which follow the formula:
+	</p>
+		<div class="img-container"><img src="https://upload.wikimedia.org/math/d/b/3/db347a236906b780af440816cd7918a8.png"></div>
+	<p class="info">
+		Or, more simply, that the probability of the next state, given every state encountered so far, is equal to the probability of the next state given only the most recent state encountered.
+	</p>
+	<p class="info">
+		Higher order Markov chains exist to produce more accurate results than a lower order chain. Higher order Markov chains take the form
+	</p>
+		<div class="img-container"><img src="res/CodeCogsEqn.gif"></div>
+		<div class="img-container"><img src="res/higher.gif"></div>
+	<p class="info">
+		Or, that the probably of the next state given all encountered states is equal to the probability given only the last <i>m</i> encountered states
+	</p>
+	<p class="info">
+		This website gets 3<sup>rd</sup>, 2<sup>nd</sup> and 1<sup>st</sup> order Markov chains by weighted randomness. Each order's token is then put through a weighing function, and compared with another. Whichever value is highest is chosen as the next word. The functions for weight are as follows
+	</p>
+		<div class="img-container"><img src="res/1storder.gif" style="margin-right: 25px;transform: translateY(-100%);"><img src="res/2ndorder.gif" style="margin-left: 25px; margin-right: 25px;"><img src="res/3rdorder.gif" style="margin-left: 25px"></div>
+	<p class="info">
+		Which are arbitrary, but work well thus far. 
+	</p>
+	<h1>What does "stochatta" mean?</h1>
+	<p class="info">
+		As far as I can tell, nothing. It was the name of a composition in the 1963 album <i>Music From Mathematics</i>, one of the first digital music albums ever produced. Though the composition was named Stochatta, the name would have been better reserved for a later track on the album, <i>Improvisations On A Random Piano</i>, in which composers were given a half measure of piano music and asked to compose another half measure in response. That composer's half measure was then given to another composer, and so on. The number of half measures available to a composer increased with each round, until 3 half measures were available. This is, of course, a Markov chain in action, and would have more appropriately been named <i>Stochatta</i>. The actual <i>Stochatta</i> is here
+	</p>
+		<div id="video">
+		<iframe width="80%" height="315" src="https://www.youtube.com/embed/Jf14bXwUO28" frameborder="0" allowfullscreen align="middle"></iframe>
+		</div>
+		<div id="quote">
+			<i>"The first piece, entitled "stochatta", was composed by Dr. John R. Pierce of Bell Laboratories, originally for piano and recorder. It demonstrates that a computer as a musical instrument is capable of producing sounds of a pleasent tambour and simple harmony"</i>
+		<p id="attribution">- <i>Music From Mathematics</i>, 1963</p>
+	</div>
+
+	<div id="copyright">
+		Icons by <a href="http://www.flaticon.com/authors/freepik">Freepik</a> and <a href="http://www.flaticon.com/authors/epiccoders">EpicCoders</a> on <a href="http://flaticon.com/">FlatIcon</a>
+	</div>
+</body>
+	
